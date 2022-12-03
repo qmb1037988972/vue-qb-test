@@ -1,0 +1,18 @@
+{
+  "name": "vue-coder",
+  "version": "1.0.0",
+  "description": "你好，世界",
+  "main": "index.js",
+  "bin": {
+    "coder": {
+      "version": "index.js",
+      "description": "index.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
