@@ -1,15 +1,18 @@
 <template>
   <div>
-    <home></home>
+    <!-- <home></home> -->
+    <if-test></if-test>
   </div>
 </template>
 
 <script>
-import Home from './page/ExHome.vue'
+// import Home from './page/ExHome.vue'
+import IfTest from './page/IfTest.vue'
 export default {
   name: 'App',
   components: {
-    Home
+    // Home,
+    IfTest,
   }
 }
 </script>
