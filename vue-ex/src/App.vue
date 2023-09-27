@@ -4,12 +4,11 @@
     <!-- <if-test></if-test> -->
     <tableText></tableText>
     /**
-      近代背景
-      人妖共生的世界，但是因为历史的断代，没人知道人妖为什么一起生活在这个世界。而洛老就是在调查这一切。
       
 
 
      */
+     <div id="blocklyDiv"></div>
   </div>
 </template>
 
@@ -17,12 +16,56 @@
 // import Home from './page/ExHome.vue'
 // import IfTest from './page/IfTest.vue'
 import tableText from './page/tableText.vue'
+import Blockly from 'blockly'
 export default {
   name: 'App',
   components: {
     // Home,
     // IfTest,
     tableText
+  },
+  data() {
+    const toolbox = {
+      "kind": "flyoutToolbox",
+      "contents": [
+        {
+          "kind": "block",
+          "type": "controls_if"
+        },
+        {
+          "kind": "block",
+          "type": "controls_repeat_ext"
+        },
+        {
+          "kind": "block",
+          "type": "logic_compare"
+        },
+        {
+          "kind": "block",
+          "type": "math_number"
+        },
+        {
+          "kind": "block",
+          "type": "math_arithmetic"
+        },
+        {
+          "kind": "block",
+          "type": "text"
+        },
+        {
+          "kind": "block",
+          "type": "text_print"
+        },
+      ]
+    }
+    return {
+      toolbox: toolbox,
+    }
+  },
+  mounted() {
+    const workspace = Blockly.inject('blocklyDiv', {toolbox: this.toolbox});
+    var json = Blockly.serialization.workspaces.save(workspace);
+    console.log(json, 'json')
   }
 }
 </script>
